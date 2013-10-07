@@ -35,5 +35,5 @@ del data[0]
 data = pd.DataFrame(data, columns = columns)
 data.ix[:, (1,2)] = data.ix[:, (1,2)].applymap(lambda x: re.sub('dr_executed_offenders.html', '', x))
 data['statement_text'] = data['last_statement'].map(lambda x: parse_statement(x))
-data.to_csv('data/death_row.csv', index=False, encoding='utf-8')
+data.to_csv('statement_data.csv', index=False, encoding='utf-8')
 

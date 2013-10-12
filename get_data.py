@@ -34,6 +34,3 @@ data = pd.DataFrame(data, columns = columns)
 data.ix[:, (1,2)] = data.ix[:, (1,2)].applymap(lambda x: re.sub('dr_executed_offenders.html', '', x))
 data['statement_text'] = data['last_statement'].map(lambda x: parse_statement(x))
 data.to_csv('statement_data.csv', index=False, encoding='utf-8')
-
-data = parse_table('https://www.tsl.state.tx.us/ref/abouttx/popcnty2010-11.html')
-pd.DataFrame(data).to_csv('population_data.csv', index=False, encoding='utf-8')
